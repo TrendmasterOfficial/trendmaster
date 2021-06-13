@@ -1,6 +1,3 @@
-<script>
-
-
 // Animations 
 
 var duration = 0.7;
@@ -53,40 +50,40 @@ tl.play();
 
 // mobile menu
 var menuToggle = $('.mobile__menu__toggle'),
-mobileMenu = $('.mobile__menu'),
-menuLinks = $('.mobile__menu__link'),
-menuLinksWrap = $('.menu__link__wrap'),
-menuLinksHeight = menuLinks.outerHeight(),
-duration = 1;
+    mobileMenu = $('.mobile__menu'),
+    menuLinks = $('.mobile__menu__link'),
+    menuLinksWrap = $('.menu__link__wrap'),
+    menuLinksHeight = menuLinks.outerHeight(),
+    duration = 1;
 
 const MTL = gsap.timeline({ paused: true, reversed: true });
 
-MTL.fromTo(mobileMenu, 0.5, {width:"0vw"}, {width:"100vw", ease: Power4.easeOut}); 
-MTL.staggerFromTo(menuLinks, 1.2, {y:50, opacity:0}, {y:0, opacity:1, ease: Power4.easeOut}, 0.06, '-=' + 1.1);
+    MTL.fromTo(mobileMenu, 0.5, {width:"0vw"}, {width:"100vw", ease: Power4.easeOut}); 
+    MTL.staggerFromTo(menuLinks, 1.2, {y:50, opacity:0}, {y:0, opacity:1, ease: Power4.easeOut}, 0.06, '-=' + 1.1);
 
 
-menuToggle.on('click', function() {
-MTL.reversed() ? MTL.play() : MTL.reverse();
-});
+    menuToggle.on('click', function() {
+    MTL.reversed() ? MTL.play() : MTL.reverse();
+    });
 
-menuLinks.on('click', function() {
-MTL.reverse();
-});
+    menuLinks.on('click', function() {
+    MTL.reverse();
+    });
 
 
 //cookies button
 var button = document.getElementById("cookies__pop");
-button.addEventListener("click", function (e) {
-TweenMax.to(button, 1, {autoAlpha: 0, opacity:0, y:"6vh", ease:"Cubic.easeInOut"}, 0)
-},false);
+    button.addEventListener("click", function (e) {
+    TweenMax.to(button, 1, {autoAlpha: 0, opacity:0, y:"6vh", ease:"Cubic.easeInOut"}, 0)
+    },false);
 
 
 const pageEl = document.querySelector('.page')
 
 const asscroll = new ASScroll({
-ease: 0.08,
-disableRaf: true,
-scrollElements: pageEl,
+    ease: 0.08,
+    disableRaf: true,
+    scrollElements: pageEl,
 });
 
 gsap.ticker.add(asscroll.update)
@@ -112,29 +109,28 @@ ScrollTrigger.addEventListener("refresh", asscroll.resize);
 var tl = gsap.timeline();
 
 var introHeadingSplit = new SplitText(".intro__heading", {type:"lines"}), 
-introHeadingLines = introHeadingSplit.lines; //an array of all the divs that wrap each character
+introHeadingLines = introHeadingSplit.lines;
 
 var introPGSplit = new SplitText(".intro__paragraph", {type:"lines"}), 
-introPGLines = introPGSplit.lines; //an array of all the divs that wrap each character
+introPGLines = introPGSplit.lines;
 
 var introBulletSplit = new SplitText(".intro__bullets", {type:"lines"}), 
-introBulletLines = introBulletSplit.lines; //an array of all the divs that wrap each character
+introBulletLines = introBulletSplit.lines;
 
 
 
 var meetHeadingSplit = new SplitText(".meet__trendmaster__heading", {type:"lines"}), 
-meetHeadingLines = meetHeadingSplit.lines; //an array of all the divs that wrap each character
+meetHeadingLines = meetHeadingSplit.lines;
 
 
 var mtmSplit1 = new SplitText(".meet__trendmaster__pg1", {type:"lines"}), 
-mtmSplitLines1 = mtmSplit1.lines; //an array of all the divs that wrap each character
+mtmSplitLines1 = mtmSplit1.lines; 
 
 var mtmSplit2 = new SplitText(".meet__trendmaster__pg2", {type:"lines"}), 
-mtmSplitLines2 = mtmSplit2.lines; //an array of all the divs that wrap each character
+mtmSplitLines2 = mtmSplit2.lines;
 
 var mtmSplit3 = new SplitText(".meet__trendmaster__pg3", {type:"lines"}), 
-mtmSplitLines3 = mtmSplit3.lines; //an array of all the divs that wrap each character
-
+mtmSplitLines3 = mtmSplit3.lines;
 
 
 var time1 = 1.9;
