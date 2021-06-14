@@ -1,5 +1,7 @@
 // Animations 
 
+<script>
+
 var duration = 0.7;
 const start = 'top+=10% 100%';
 
@@ -295,3 +297,4 @@ ease: "Power3.easeInOut"
 
 }); // load func
 
+</script>
