@@ -1,3 +1,32 @@
+// mobile menu
+  var menuToggle = $('.mobile__menu__toggle'),
+      mobileMenu = $('.mobile__menu'),
+      menuLinks = $('.mobile__menu__link'),
+      menuLinksWrap = $('.menu__link__wrap'),
+      menuLinksHeight = menuLinks.outerHeight(),
+      duration = 1;
+  
+	const MTL = gsap.timeline({ paused: true, reversed: true });
+  
+  MTL.fromTo(mobileMenu, 0.5, {width:"0vw"}, {width:"100vw", ease: Power4.easeOut}); 
+  MTL.staggerFromTo(menuLinks, 1.2, {y:50, opacity:0}, {y:0, opacity:1, ease: Power4.easeOut}, 0.06, '-=' + 1.1);
+
+        
+  menuToggle.on('click', function() {
+    MTL.reversed() ? MTL.play() : MTL.reverse();
+  });
+
+  menuLinks.on('click', function() {
+    MTL.reverse();
+  });
+
+
+//cookies button
+  var button = document.getElementById("cookies__pop");
+  button.addEventListener("click", function (e) {
+ 		 TweenMax.to(button, 1, {autoAlpha: 0, opacity:0, y:"6vh", ease:"Cubic.easeInOut"}, 0)
+	},false);
+  
 
   const pageEl = document.querySelector('.page')
 
@@ -153,7 +182,7 @@
     gsap.from(meetHeadingLines, time1, {
       scrollTrigger: {
         scrub: false,
-        trigger: ".meet__trendmaster__heading",
+        trigger: "meet__sub",
       },
       autoAlpha: 0,
       y: 20,
@@ -165,19 +194,19 @@
     gsap.from([mtmSplitLines1, mtmSplitLines2, mtmSplitLines3], time1, {
       scrollTrigger: {
         scrub: false,
-        trigger: ".meet__trendmaster__heading",
+        trigger: "meet__sub",
       },
         autoAlpha: 0,
         y: 20,
-        stagger: 0.05,
-        delay: 0.3,
+        stagger: 0.15,
+        delay: 0.4,
         ease: eZ
     });  
 
     gsap.from(".meet__trendmaster__title .meet__trendmaster__heading", time1, {
       scrollTrigger: {
         scrub: true,
-        trigger: ".meet__trendmaster__heading",
+        trigger: "meet__sub",
       },
         autoAlpha: 0,
         y: 20,
@@ -188,7 +217,7 @@
     gsap.from(".meet__number", time1, {
       scrollTrigger: {
         scrub: false,
-        trigger: ".meet__trendmaster__heading",
+        trigger: "meet__sub",
       },
       autoAlpha: 0,
       scale: 0,
@@ -200,7 +229,7 @@
     gsap.from(".meet__sub", time1, {
       scrollTrigger: {
         scrub: false,
-        trigger: ".meet__trendmaster__heading",
+        trigger: "meet__sub",
       },
       autoAlpha: 0,
       y: 20,
@@ -213,25 +242,14 @@
     gsap.from(".meet__image", time1, {
       scrollTrigger: {
         scrub: false,
-        trigger: ".meet__trendmaster__heading",
+        trigger: "meet__sub",
       },
-        autoAlpha: 0,
-        scale: 0.7,
-        stagger: 0.15,
-        delay: 0.8,
-        ease: "Power3.easeInOut"
+      autoAlpha: 0,
+      scale: 0.7,
+      stagger: 0.15,
+      delay: 0.8,
+      ease: "Power3.easeInOut"
     });
     
-    gsap.from(".meet__number", 2.2, {
-      scrollTrigger: {
-        scrub: false,
-        trigger: ".meet__trendmaster__heading",
-      },
-        autoAlpha: 0,
-        stagger: 0.045,
-        y: 25,
-        delay: 0.3,
-        ease: "Sine.easeInOut"
-    });
-
+      
   }); // load func
